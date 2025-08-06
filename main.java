@@ -80,7 +80,24 @@ public lass ventas {
                             String nuevaCant = scanner.nextLine();
                             System.out.print ("Nuevo precio:");
                             String nuevoPrecio = scanner.nextLine ();
-                            
+
+                            String nuevaVenta = idMod + "," + nuevoProd + "," + nuevaCant + "," + nuevoPrecio;
+                            ventas.set(i, nuevaVenta);
+                            modificado = true;
+                            System.out.println("Venta modificada.");
+                            break;
+                        }
+                    }
+                    if (!modificado) {
+                        System.out.println("Venta no encontrada.");
+                    }
+                }
+
+                case 5 -> {
+                    System.out.print("ID de venta a eliminar: ");
+                    String idDel = scanner.nextLine();
+                    boolean eliminado = false;
+
                         }
                     }
                 }    
