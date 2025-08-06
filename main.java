@@ -97,6 +97,38 @@ public lass ventas {
                     System.out.print("ID de venta a eliminar: ");
                     String idDel = scanner.nextLine();
                     boolean eliminado = false;
+               for (int i = 0; i < ventas.size(); i++) {
+                        String[] datos = ventas.get(i).split(",");
+                        if (datos[0].equals(idDel)) {
+                            ventas.remove(i);
+                            eliminado = true;
+                            System.out.println("Venta eliminada.");
+                            break;
+                        }
+                    }
+                    if (!eliminado) {
+                        System.out.println("Venta no encontrada.");
+                    }
+                }
+
+                case 6 -> {
+                    double total = 0;
+                    for (String v : ventas) {
+                        String[] datos = v.split(",");
+                        int cantidad = Integer.parseInt(datos[2]);
+                        double precio = Double.parseDouble(datos[3]);
+                        total += cantidad * precio;
+                    }
+                    System.out.println("Ingreso total: $" + total);
+                }
+
+                case 7 -> System.out.println("Saliendo...");
+                default -> System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 7);
+    }
+}
 
                         }
                     }
